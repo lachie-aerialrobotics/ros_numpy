@@ -166,7 +166,7 @@ def merge_rgb_fields(cloud_arr):
 
     # not sure if there is a better way to do this. i'm changing the type of the array
     # from uint32 to float32, but i don't want any conversion to take place -jdb
-    rgb_arr.dtype = np.float32
+    rgb_arr.dtype = float
 
     # create a new array, without r, g, and b, but with rgb float32 field
     new_dtype = []
@@ -174,7 +174,7 @@ def merge_rgb_fields(cloud_arr):
         field_type, field_offset = cloud_arr.dtype.fields[field_name]
         if field_name not in ('r', 'g', 'b'):
             new_dtype.append((field_name, field_type))
-    new_dtype.append(('rgb', np.float32))
+    new_dtype.append(('rgb', float))
     new_cloud_arr = np.zeros(cloud_arr.shape, new_dtype)    
 
     # fill in the new array
@@ -221,7 +221,7 @@ def split_rgb_field(cloud_arr):
             new_cloud_arr[field_name] = cloud_arr[field_name]
     return new_cloud_arr
 
-def get_xyz_points(cloud_array, remove_nans=True, dtype=np.float):
+def get_xyz_points(cloud_array, remove_nans=True, dtype=float):
     '''Pulls out x, y, and z columns from the cloud recordarray, and returns
 	a 3xN matrix.
     '''

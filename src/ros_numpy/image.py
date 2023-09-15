@@ -49,14 +49,14 @@ name_to_dtypes = {
 	"32SC2":   (np.int32,   2),
 	"32SC3":   (np.int32,   3),
 	"32SC4":   (np.int32,   4),
-	"32FC1":   (np.float32, 1),
-	"32FC2":   (np.float32, 2),
-	"32FC3":   (np.float32, 3),
-	"32FC4":   (np.float32, 4),
-	"64FC1":   (np.float64, 1),
-	"64FC2":   (np.float64, 2),
-	"64FC3":   (np.float64, 3),
-	"64FC4":   (np.float64, 4)
+	"32FC1":   (float, 1),
+	"32FC2":   (float, 2),
+	"32FC3":   (float, 3),
+	"32FC4":   (float, 4),
+	"64FC1":   (float, 1),
+	"64FC2":   (float, 2),
+	"64FC3":   (float, 3),
+	"64FC4":   (float, 4)
 }
 
 @converts_to_numpy(Image)
