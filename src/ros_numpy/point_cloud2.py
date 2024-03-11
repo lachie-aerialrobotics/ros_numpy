@@ -118,6 +118,7 @@ def pointcloud2_to_array(cloud_msg, squeeze=True):
     dtype_list = fields_to_dtype(cloud_msg.fields, cloud_msg.point_step)
 
     print(type(dtype_list))
+    print(vars(dtype_list))
     print(len(dtype_list))
 
     # parse the cloud into an array
